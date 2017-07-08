@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "Converting $1 from ISO-8859-1 to UTF8"
+iconv -f ISO-8859-1 $1 -t UTF8 -o tmp.srt
+mv tmp.srt $1
+
