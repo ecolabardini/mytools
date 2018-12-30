@@ -23,6 +23,6 @@
         required = true
 [core]
         editor = /usr/bin/vim
-        excludesfile = /Users/ecolabardini/.gitignore_global
+        excludesfile = ~/.gitignore_global
 [pull]
         default = current
