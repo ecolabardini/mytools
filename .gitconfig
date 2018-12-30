@@ -1,17 +1,28 @@
 [user]
-	name = Eduardo Colabardini
-	email = eduardocolabardini@gmail.com
-[push]
-	default = simple
-[branch]
-	autosetuprebase = always
+        name = Eduardo Colabardini
+        email = eduardocolabardini@gmail.com
 [alias]
         co = checkout
+        br = branch
         ci = commit
         st = status
-        br = branch
         unstage = reset HEAD --
+        last = log -1 HEAD
         coall = checkout -- .
-        clear = clean -xdf
-        apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0r git rm --cached
-
+        ulc = reset --soft HEAD~1
+	clear = clean -xdf
+	apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0r git rm --cached
+[push]
+        default = current
+[branch]
+	autosetuprebase = always
+[filter "lfs"]
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge -- %f
+        process = git-lfs filter-process
+        required = true
+[core]
+        editor = /usr/bin/vim
+        excludesfile = /Users/ecolabardini/.gitignore_global
+[pull]
+        default = current
